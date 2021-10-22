@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.getElementsByTagName("html")[0].className += " js";</script>
+  <link rel="stylesheet" href="https://unpkg.com/codyhouse-framework/main/assets/css/style.min.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <title>The process of building a CSS Framework</title>
+</head>
+<body data-theme="dark">
+  <!-- Header -->
+  <header class="header position-relative js-header ">
+    <div class="header__container container max-width-lg">
+      <div class="header__logo">
+        <a href="#0">
+          <svg width="104" height="30" viewBox="0 0 104 30"><title>Go to homepage</title><path d="M37.54 24.08V3.72h4.92v16.37h8.47v4zM60.47 24.37a7.82 7.82 0 01-5.73-2.25 8.36 8.36 0 01-2-5.62 8.32 8.32 0 012.08-5.71 8 8 0 015.64-2.18 8.07 8.07 0 015.68 2.2 8.49 8.49 0 012 5.69 8.63 8.63 0 01-1.78 5.38 7.6 7.6 0 01-5.89 2.49zm0-3.67c2.42 0 2.73-3 2.73-4.23s-.31-4.26-2.73-4.26-2.79 3-2.79 4.26.32 4.23 2.82 4.23zM95.49 24.37a7.82 7.82 0 01-5.73-2.25 8.36 8.36 0 01-2-5.62 8.32 8.32 0 012.08-5.71 8.4 8.4 0 0111.31 0 8.43 8.43 0 012 5.69 8.6 8.6 0 01-1.77 5.38 7.6 7.6 0 01-5.89 2.51zm0-3.67c2.42 0 2.73-3 2.73-4.23s-.31-4.26-2.73-4.26-2.8 3-2.8 4.26.31 4.23 2.83 4.23zM77.66 30c-5.74 0-7-3.25-7.23-4.52l4.6-.26c.41.91 1.17 1.41 2.76 1.41a2.45 2.45 0 002.82-2.53v-2.68a7 7 0 01-1.7 1.75 6.12 6.12 0 01-5.85-.08c-2.41-1.37-3-4.25-3-6.66 0-.89.12-3.67 1.45-5.42a5.67 5.67 0 014.64-2.4c1.2 0 3 .25 4.46 2.82V8.81h4.85v15.33a5.2 5.2 0 01-2.12 4.32A9.92 9.92 0 0177.66 30zm.15-9.66c2.53 0 2.81-2.69 2.81-3.91s-.31-4-2.81-4-2.81 2.8-2.81 4 .27 3.91 2.81 3.91zM55.56 3.72h9.81v2.41h-9.81z" fill="var(--color-contrast-higher)"/><circle cx="15" cy="15" r="15" fill="var(--color-primary)"/></svg>
+        </a>
+      </div>
+
+      <button class="btn btn--subtle header__trigger js-header__trigger" aria-label="Toggle menu" aria-expanded="false" aria-controls="header-nav">
+        <i class="header__trigger-icon" aria-hidden="true"></i>
+        <span>Menu</span>
+      </button>
+
+      <nav class="header__nav js-header__nav" id="header-nav" role="navigation" aria-label="Main">
+        <div class="header__nav-inner">
+          <div class="header__label">Main menu</div>
+          <ul class="header__list">
+            <li class="header__item"><a href="#0" class="header__link">About</a></li>
+            <li class="header__item"><a href="#0" class="header__link">Solutions</a></li>
+            <li class="header__item"><a href="#0" class="header__link">Resources</a></li>
+            <li class="header__item"><a href="#0" class="header__link">Pricing</a></li>
+            <li class="header__item header__item--divider" aria-hidden="true"></li>
+            <li class="header__item">
+              <ul class="radio-switch js-radio-switch">
+                <li class="radio-switch__item">
+                  <input class="radio-switch__input sr-only" type="radio" name="radio-switch-name" id="radio-1" value="light">
+                  <label class="radio-switch__label" for="radio-1"><svg class="icon icon--xs" viewBox="0 0 16 16">
+                      <title>Enable light mode</title>
+                      <path d="M7 0h2v2H7zM12.88 1.637l1.414 1.415-1.415 1.413-1.414-1.414zM14 7h2v2h-2zM12.95 14.433l-1.415-1.414 1.414-1.414 1.415 1.413zM7 14h2v2H7zM2.98 14.363L1.566 12.95l1.415-1.414 1.414 1.415zM0 7h2v2H0zM3.05 1.707L4.465 3.12 3.05 4.535 1.636 3.121z" />
+                      <path d="M8 4C5.8 4 4 5.8 4 8s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4z" />
+                    </svg></label>
+                </li>
+
+                <li class="radio-switch__item">
+                  <input class="radio-switch__input sr-only" type="radio" name="radio-switch-name" id="radio-2" checked value="dark">
+                  <label class="radio-switch__label" for="radio-2"><svg class="icon icon--xs" viewBox="0 0 16 16">
+                      <title>Enable dark mode</title>
+                      <path d="M6,0C2.5,0.9,0,4.1,0,7.9C0,12.4,3.6,16,8.1,16c3.8,0,6.9-2.5,7.9-6C9.9,11.7,4.3,6.1,6,0z"></path>
+                    </svg></label>
+                  <div aria-hidden="true" class="radio-switch__marker"></div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="container max-width-adaptive-md padding-top-xl padding-bottom-xxl">
+    <div class="grid">
+      <h1 class="text-xxxl text-anim text-anim--clip js-text-anim">
+        We <span class="text-anim__wrapper js-text-anim__wrapper"><i class="text-anim__word text-anim__word--in js-text-anim__word">design</i><i class="text-anim__word js-text-anim__word">develop</i><i class="text-anim__word js-text-anim__word">create</i></span> digital experiences
+      </h1>
+
+      <div class="col-8@md offset-4@md">
+        <p class="line-height-lg margin-y-md color-contrast-medium">This template has been built using the CodyHouse UI Library. Download the template on GitHub and read the article on Codrops to learn how to build this page yourself in no time.</p>
+
+        <div class="flex items-center gap-sm">
+          <a href="https://github.com/CodyHouse/codyframe-template-for-codrops" class="btn btn--primary">Download</a>
+
+          <a class="link-fx-1 color-contrast-higher" href="https://tympanus.net/codrops/?p=56956">
+            <span>Tutorial on Codrops</span>
+            <svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="15.5"/><line x1="10" y1="18" x2="16" y2="12"/><line x1="16" y1="12" x2="22" y2="18" /></g></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky Hero -->
+  <section class="sticky-hero sticky-hero--scale js-sticky-hero">
+    <div class="sticky-hero__media" style="background-image:url(assets/img/sticky-hero-img.jpg)" aria-hidden="true"></div>
+
+    <div class="sticky-hero__content">
+      <blockquote class="container max-width-sm text-center color-white">
+          <p class="text-xxl">One belongs to New York instantly, one belongs to it as much in five minutes as in five years.</p>
+
+          <footer class="margin-top-lg">&#8211; Tom Wolfe</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Gallery of works -->
+  <div class="container max-width-adaptive-lg padding-y-xl">
+    <div class="grid gap-xs">
+      <h2 class="text-md font-medium col-4@md border-top padding-top-xs">Selected Works</h2>
+
+      <figure class="col-8@md reveal-fx reveal-fx--rotate-up">
+        <img src="assets/img/gallery-img-1.jpg" alt="Image Preview">
+      </figure>
+
+      <figure class="col-8@md reveal-fx reveal-fx--rotate-up">
+        <img src="assets/img/gallery-img-2.jpg" alt="Image Preview">
+      </figure>
+
+      <figure class="col-4@md reveal-fx reveal-fx--rotate-up">
+        <img src="assets/img/gallery-img-3.jpg" alt="Image Preview">
+      </figure>
+
+      <figure class="offset-1@md col-10@md reveal-fx reveal-fx--rotate-up">
+        <img src="assets/img/gallery-img-4.jpg" alt="Image Preview">
+      </figure>
+    </div>
+  </div>
+
+  <!-- Text Section -->
+  <div class="bg-dark padding-top-xxl padding-bottom-lg">
+    <div class="container max-width-adaptive-lg">
+      <div class="grid gap-md">
+        <div class="col-4@md">
+          <h3 class="text-xxl">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h3>
+        </div>
+        
+        <div class="col-8@md">
+          <div class="text-component">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint tempore repellat earum. Natus accusantium dolores quas porro delectus corporis explicabo, adipisci eaque, tempore beatae blanditiis totam iste alias ipsum. Asperiores, temporibus quo.</p>
+    
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis tempore officiis voluptatem et, sequi qui explicabo esse excepturi minus quisquam cupiditate cum recusandae ad dicta doloribus doloremque omnis inventore ipsa a veritatis laboriosam. Nostrum numquam nesciunt animi dolore. Sit earum vel illum obcaecati dolorem recusandae voluptates molestias iure repellendus blanditiis porro aspernatur tempora nam commodi ipsam ipsum minus nobis omnis pariatur sed dolor fugiat, nulla facilis! Ducimus quasi dolorum laudantium distinctio cum voluptatibus inventore nostrum, a qui deleniti odit dicta!</p>
+
+            <a class="link-fx-1 color-contrast-higher" href="#0">
+              <span>Read more</span>
+              <svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="15.5"/><line x1="10" y1="18" x2="16" y2="12"/><line x1="16" y1="12" x2="22" y2="18" /></g></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stacking Cards -->
+  <div class="bg-dark padding-y-xl">
+    <div class="container max-width-adaptive-md">
+      <ul class="stack-cards js-stack-cards">
+        <li class="stack-cards__item bg radius-lg shadow-md overflow-hidden js-stack-cards__item">
+          <img src="assets/img/stacking-cards-img-1.jpg" alt="Image description">
+        </li>
+      
+        <li class="stack-cards__item bg radius-lg shadow-md overflow-hidden js-stack-cards__item">
+          <img src="assets/img/stacking-cards-img-2.jpg" alt="Image description">
+        </li>
+      
+        <li class="stack-cards__item bg radius-lg shadow-md overflow-hidden js-stack-cards__item">
+          <img src="assets/img/stacking-cards-img-3.jpg" alt="Image description">
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Newsletter Form -->
+  <section class="newsletter padding-y-xxl text-center">
+    <div class="container max-width-xs">
+      <div class="text-component margin-bottom-md">
+        <h2>Join our Newsletter</h2>
+        <p>Get our monthly recap with the latest news.</p>
+      </div>
+  
+      <form class="grid gap-xxs">
+        <div class="col@xs min-width-0">
+          <input class="form-control width-100% height-100%" aria-label="Email" type="email" placeholder="Email address">
+        </div>
+  
+        <div class="col-content@xs">
+          <button class="btn btn--primary width-100% height-100%">Subscribe</button>
+        </div>
+      </form>
+  
+      <p role="alert" class="bg-success bg-opacity-20% text-sm padding-xs radius-md margin-top-xs"><strong>Success!</strong> Please check your inbox for a confirmation email.</p>
+  
+      <div class="margin-top-xs">
+        <small class="text-xs color-contrast-medium">By subscribing you agree to our <a class="color-contrast-high" href="#0">privacy policy</a>.</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer bg-dark position-relative z-index-1 padding-top-xl">
+    <div class="container max-width-lg">
+      <div class="grid gap-lg">
+        <div class="col-3@lg order-2@lg text-right@lg">
+          <a class="main-footer__logo" href="#0">
+            <svg width="104" height="30" viewBox="0 0 104 30"><title>Go to homepage</title><path d="M37.54 24.08V3.72h4.92v16.37h8.47v4zM60.47 24.37a7.82 7.82 0 01-5.73-2.25 8.36 8.36 0 01-2-5.62 8.32 8.32 0 012.08-5.71 8 8 0 015.64-2.18 8.07 8.07 0 015.68 2.2 8.49 8.49 0 012 5.69 8.63 8.63 0 01-1.78 5.38 7.6 7.6 0 01-5.89 2.49zm0-3.67c2.42 0 2.73-3 2.73-4.23s-.31-4.26-2.73-4.26-2.79 3-2.79 4.26.32 4.23 2.82 4.23zM95.49 24.37a7.82 7.82 0 01-5.73-2.25 8.36 8.36 0 01-2-5.62 8.32 8.32 0 012.08-5.71 8.4 8.4 0 0111.31 0 8.43 8.43 0 012 5.69 8.6 8.6 0 01-1.77 5.38 7.6 7.6 0 01-5.89 2.51zm0-3.67c2.42 0 2.73-3 2.73-4.23s-.31-4.26-2.73-4.26-2.8 3-2.8 4.26.31 4.23 2.83 4.23zM77.66 30c-5.74 0-7-3.25-7.23-4.52l4.6-.26c.41.91 1.17 1.41 2.76 1.41a2.45 2.45 0 002.82-2.53v-2.68a7 7 0 01-1.7 1.75 6.12 6.12 0 01-5.85-.08c-2.41-1.37-3-4.25-3-6.66 0-.89.12-3.67 1.45-5.42a5.67 5.67 0 014.64-2.4c1.2 0 3 .25 4.46 2.82V8.81h4.85v15.33a5.2 5.2 0 01-2.12 4.32A9.92 9.92 0 0177.66 30zm.15-9.66c2.53 0 2.81-2.69 2.81-3.91s-.31-4-2.81-4-2.81 2.8-2.81 4 .27 3.91 2.81 3.91zM55.56 3.72h9.81v2.41h-9.81z" fill="var(--color-contrast-higher)"/><circle cx="15" cy="15" r="15" fill="var(--color-primary)"/></svg>
+          </a>
+        </div>
+        
+        <nav class="col-9@lg order-1@lg">
+          <ul class="grid gap-lg">
+            <li class="col-6@xs col-3@md">
+              <h4 class="margin-bottom-sm text-base@md">Product</h4>
+              <ul class="grid gap-xs text-sm@md">
+                <li><a href="#0" class="main-footer__link">Pricing</a></li>
+                <li><a href="#0" class="main-footer__link">Teams</a></li>
+                <li><a href="#0" class="main-footer__link">Updates</a></li>
+                <li><a href="#0" class="main-footer__link">Features</a></li>
+                <li><a href="#0" class="main-footer__link">Integrations</a></li>
+                <li><a href="#0" class="main-footer__link">Support</a></li>
+              </ul>
+            </li>
+  
+            <li class="col-6@xs col-3@md">
+              <h4 class="margin-bottom-sm text-base@md">Developers</h4>
+              <ul class="grid gap-xs text-sm@md">
+                <li><a href="#0" class="main-footer__link">Documentation</a></li>
+                <li><a href="#0" class="main-footer__link">API reference</a></li>
+                <li><a href="#0" class="main-footer__link">API status</a></li>
+                <li><a href="#0" class="main-footer__link">Open source</a></li>
+              </ul>
+            </li>
+  
+            <li class="col-6@xs col-3@md">
+              <h4 class="margin-bottom-sm text-base@md">Resources</h4>
+              <ul class="grid gap-xs text-sm@md">
+                <li><a href="#0" class="main-footer__link">Tutorials</a></li>
+                <li><a href="#0" class="main-footer__link">Docs</a></li>
+                <li><a href="#0" class="main-footer__link">Community</a></li>
+                <li><a href="#0" class="main-footer__link">Case studies</a></li>
+                <li><a href="#0" class="main-footer__link">Help center</a></li>
+              </ul>
+            </li>
+  
+            <li class="col-6@xs col-3@md">
+              <h4 class="margin-bottom-sm text-base@md">About</h4>
+              <ul class="grid gap-xs text-sm@md">
+                <li><a href="#0" class="main-footer__link">Company</a></li>
+                <li><a href="#0" class="main-footer__link">Customers</a></li>
+                <li><a href="#0" class="main-footer__link">Careers</a></li>
+                <li><a href="#0" class="main-footer__link">Education</a></li>
+                <li><a href="#0" class="main-footer__link">Our story</a></li>
+                <li><a href="#0" class="main-footer__link">Press kit</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    
+      <div class="flex flex-column border-top padding-y-xs margin-top-lg flex-row@md justify-between@md items-center@md">
+        <div class="margin-bottom-sm margin-bottom-0@md">
+          <div class="text-sm text-xs@md color-contrast-medium flex flex-wrap gap-xs">
+            <span>&copy; myWebsite</span>
+            <a href="#0" class="color-contrast-high">Terms</a>
+            <a href="#0" class="color-contrast-high">Privacy</a>
+          </div>
+        </div>
+  
+        <div class="flex items-center gap-xs">
+          <a href="#0" class="main-footer__social">
+            <svg class="icon block" viewBox="0 0 16 16"><title>Follow us on Twitter</title><g><path d="M16,3c-0.6,0.3-1.2,0.4-1.9,0.5c0.7-0.4,1.2-1,1.4-1.8c-0.6,0.4-1.3,0.6-2.1,0.8c-0.6-0.6-1.5-1-2.4-1 C9.3,1.5,7.8,3,7.8,4.8c0,0.3,0,0.5,0.1,0.7C5.2,5.4,2.7,4.1,1.1,2.1c-0.3,0.5-0.4,1-0.4,1.7c0,1.1,0.6,2.1,1.5,2.7 c-0.5,0-1-0.2-1.5-0.4c0,0,0,0,0,0c0,1.6,1.1,2.9,2.6,3.2C3,9.4,2.7,9.4,2.4,9.4c-0.2,0-0.4,0-0.6-0.1c0.4,1.3,1.6,2.3,3.1,2.3 c-1.1,0.9-2.5,1.4-4.1,1.4c-0.3,0-0.5,0-0.8,0c1.5,0.9,3.2,1.5,5,1.5c6,0,9.3-5,9.3-9.3c0-0.1,0-0.3,0-0.4C15,4.3,15.6,3.7,16,3z"></path></g></svg>
+          </a>
+  
+          <a href="#0" class="main-footer__social">
+            <svg class="icon block" viewBox="0 0 16 16"><title>Follow us on Youtube</title><g><path d="M15.8,4.8c-0.2-1.3-0.8-2.2-2.2-2.4C11.4,2,8,2,8,2S4.6,2,2.4,2.4C1,2.6,0.3,3.5,0.2,4.8C0,6.1,0,8,0,8 s0,1.9,0.2,3.2c0.2,1.3,0.8,2.2,2.2,2.4C4.6,14,8,14,8,14s3.4,0,5.6-0.4c1.4-0.3,2-1.1,2.2-2.4C16,9.9,16,8,16,8S16,6.1,15.8,4.8z M6,11V5l5,3L6,11z"></path></g></svg>
+          </a>
+  
+          <a href="#0" class="main-footer__social">
+            <svg class="icon block" viewBox="0 0 16 16"><title>Follow us on Github</title><g><path  d="M8,0.2c-4.4,0-8,3.6-8,8c0,3.5,2.3,6.5,5.5,7.6 C5.9,15.9,6,15.6,6,15.4c0-0.2,0-0.7,0-1.4C3.8,14.5,3.3,13,3.3,13c-0.4-0.9-0.9-1.2-0.9-1.2c-0.7-0.5,0.1-0.5,0.1-0.5 c0.8,0.1,1.2,0.8,1.2,0.8C4.4,13.4,5.6,13,6,12.8c0.1-0.5,0.3-0.9,0.5-1.1c-1.8-0.2-3.6-0.9-3.6-4c0-0.9,0.3-1.6,0.8-2.1 c-0.1-0.2-0.4-1,0.1-2.1c0,0,0.7-0.2,2.2,0.8c0.6-0.2,1.3-0.3,2-0.3c0.7,0,1.4,0.1,2,0.3c1.5-1,2.2-0.8,2.2-0.8 c0.4,1.1,0.2,1.9,0.1,2.1c0.5,0.6,0.8,1.3,0.8,2.1c0,3.1-1.9,3.7-3.7,3.9C9.7,12,10,12.5,10,13.2c0,1.1,0,1.9,0,2.2 c0,0.2,0.1,0.5,0.6,0.4c3.2-1.1,5.5-4.1,5.5-7.6C16,3.8,12.4,0.2,8,0.2z"></path></g></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/codyhouse-framework/main/assets/js/util.js"></script>
+  <script src="assets/script.js"></script>
+</body>
+</html>
